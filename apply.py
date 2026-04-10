@@ -33,7 +33,7 @@ headers = {
     "X-Signature-256": f"sha256={signature}",
 }
 
-response = requests.post(SUBMIT_URL, data=body, headers=headers)
+response = requests.post(SUBMIT_URL, data=body.decode("utf-8"), headers=headers)
 response.raise_for_status()
 
 result = response.json()
