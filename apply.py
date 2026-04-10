@@ -9,13 +9,17 @@ import requests
 SIGNING_SECRET = os.environ.get("SIGNING_SECRET", "hello-there-from-b12")
 SUBMIT_URL = "https://b12.io/apply/submission"
 
+# Capture timestamp once
+now = datetime.now(timezone.utc)
+timestamp = now.strftime("%Y-%m-%dT%H:%M:%S.") + f"{now.microsecond // 1000:03d}Z"
+
 payload = {
     "action_run_link": os.environ["ACTION_RUN_LINK"],
     "email": "manolis22940@yahoo.gr",
     "name": "Manolis Kypriotakis",
     "repository_link": os.environ["REPOSITORY_LINK"],
     "resume_link": "www.linkedin.com/in/manolis-kypriotakis-43aa34188",
-    "timestamp": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%S.") + f"{datetime.now(timezone.utc).microsecond // 1000:03d}Z",
+    "timestamp": timestamp,
 }
 
 # Canonical JSON: sorted keys, compact separators, UTF-8
