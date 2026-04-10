@@ -14,7 +14,7 @@ payload = {
     "email": "manolis22940@yahoo.gr",
     "name": "Manolis Kypriotakis",
     "repository_link": os.environ["REPOSITORY_LINK"],
-    "resume_link": "https://www.linkedin.com/in/manolis-kypriotakis",
+    "resume_link": "www.linkedin.com/in/manolis-kypriotakis-43aa34188",
     "timestamp": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%S.") + f"{datetime.now(timezone.utc).microsecond // 1000:03d}Z",
 }
 
