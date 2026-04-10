@@ -24,6 +24,7 @@ payload = {
 
 # Canonical JSON: sorted keys, compact separators, UTF-8
 body = json.dumps(payload, separators=(",", ":"), sort_keys=True).encode("utf-8")
+print(f"Submission receipt: {body}")
 
 # HMAC-SHA256 signature
 signature = hmac.new(SIGNING_SECRET.encode("utf-8"), body, hashlib.sha256).hexdigest()
